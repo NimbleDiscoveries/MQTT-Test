@@ -1,7 +1,8 @@
 import time
 import paho.mqtt.client as paho
 from paho import mqtt
-
+from messenger import cli
+clie = cli()
 # setting callbacks for different events to see if it works, print the message etc.
 def on_connect(client, userdata, flags, rc, properties=None):
     print("CONNACK received with code %s." % rc)
@@ -17,7 +18,7 @@ def on_subscribe(client, userdata, mid, granted_qos, properties=None):
 # print message, useful for checking if it was successful
 def on_message(client, userdata, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload)+"user data: "+str(userdata))
-    open('file.txt','ab').write(msg.payload)
+    clie.msg(msg.payload)
 
 # using MQTT version 5 here, for 3.1.1: MQTTv311, 3.1: MQTTv31
 # userdata is user defined data of any type, updated by user_data_set()
