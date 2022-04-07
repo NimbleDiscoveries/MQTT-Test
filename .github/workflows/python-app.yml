@@ -10,12 +10,12 @@ on:
     branches: [ main ]
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   build:
 
-    runs-on: windows-2019
+    runs-on: ubunto-latest
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
@@ -34,5 +34,5 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-        ./run.bat
+        
     
