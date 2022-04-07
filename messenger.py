@@ -1,4 +1,5 @@
 import pymongo
+
 class cli():
   client = pymongo.MongoClient("mongodb+srv://esp-th:Blazer1@mqtt-test.nl8qr.mongodb.net/mqtt-test?retryWrites=true&w=majority")
   db = client.test
@@ -10,3 +11,4 @@ class cli():
   def __init__(self):
     self.client = pymongo.MongoClient("mongodb+srv://esp-th:Blazer1@mqtt-test.nl8qr.mongodb.net/mqtt-test?retryWrites=true&w=majority")
     self.db = self.client.test
+    print("setting up pymongo...")
