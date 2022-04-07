@@ -1,3 +1,4 @@
+@echo on
 echo starting...
 python -m pip install paho-mqtt
 echo running
