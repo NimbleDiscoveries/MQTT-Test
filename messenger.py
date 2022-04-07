@@ -9,6 +9,7 @@ class cli():
     elif type=='h':
       self.db.esp.insert_one({'humid':msg})
   def __init__(self):
+    input('hit enter to cont.')
     self.client = pymongo.MongoClient("mongodb+srv://esp-th:Blazer1@mqtt-test.nl8qr.mongodb.net/mqtt-test?retryWrites=true&w=majority")
     self.db = self.client.test
     print("setting up pymongo...")
