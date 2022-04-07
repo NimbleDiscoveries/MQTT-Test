@@ -23,6 +23,7 @@ def on_message(client, userdata, msg):
 # using MQTT version 5 here, for 3.1.1: MQTTv311, 3.1: MQTTv31
 # userdata is user defined data of any type, updated by user_data_set()
 # client_id is the given name of the client
+input('hit enter to continue: ')
 client = paho.Client(client_id="", userdata=None, protocol=paho.MQTTv5)
 client.on_connect = on_connect
 
@@ -39,7 +40,7 @@ client.on_message = on_message
 client.on_publish = on_publish
 
 # subscribe to all topics of encyclopedia by using the wildcard "#"
-client.subscribe("encyclopedia/temperature", qos=1)
+client.subscribe("encyclopedia/#", qos=1)
 
 # a single publish, this can also be done in loops, etc.
 #client.publish("encyclopedia/temperature", payload="hot", qos=1)
