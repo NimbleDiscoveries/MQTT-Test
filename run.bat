@@ -1,4 +1,4 @@
-@echo on
+@echo off
 echo starting...
 python -m pip install paho-mqtt pymongo dnspython
 echo running
