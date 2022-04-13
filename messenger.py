@@ -2,14 +2,12 @@ import pymongo
 from time import sleep
 import os
 class cli():
-  #client = pymongo.MongoClient("mongodb+srv://esp-th:Blazer1@mqtt-test.nl8qr.mongodb.net/mqtt-test?retryWrites=true&w=majority")
-  #db = client.test
   def __init__(self):
     sleep(20)
     print('10 more sec')
     sleep(10)
     self.client = pymongo.MongoClient(f"mongodb+srv://{os.environ['USER_MONGODB']}:{os.environ['PASSWORD_MONGODB']}@mqtt-test.nl8qr.mongodb.net/mqtt-test?retryWrites=true&w=majority")
-    self.db = self.client.test
+    self.db = self.client.testing
     print("setting up pymongo...")
   def msg_send(self,msg,type='t'):
     if type=='t':
