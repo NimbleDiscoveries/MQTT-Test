@@ -6,7 +6,7 @@ class cli():
     sleep(20)
     print('10 more sec')
     sleep(10)
-    self.client = pymongo.MongoClient(f"mongodb+srv://{os.environ['USER_MONGODB']}:{os.environ['PASSWORD_MONGODB']}@esp-data.jrym6.mongodb.net/esp-test?retryWrites=true&w=majority")
+    self.client = pymongo.MongoClient(f"mongodb+srv://{os.environ['USER_MONGODB']}:{os.environ['PASSWORD_MONGODB']}@esp-data.jrym6.mongodb.net/esp-data?retryWrites=true&w=majority")
     self.db = self.client.testing
     print("setting up pymongo...")
   def msg_send(self,msg,type='t'):
